@@ -1,0 +1,196 @@
+.div_center{
+    font-weight: bold;
+    text-align: center; 
+}
+
+.card-form-login{
+    width: 1130px;
+    height: 702px;
+    background-color: #FFFFFF;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid #C1C1C1;
+}
+
+.card-gray{
+    width: 1130px;
+    height: 152px;
+    background-color: #F3F3F3;
+    border: 1px solid #C1C1C1; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-email{
+    width: 500px;
+    height: 60px;
+}
+
+.input-pass{
+    width: 500px;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.login-btn{
+    width: 500px;
+    height: 55px;
+    margin-top: 20px;
+}
+
+.recover-pass{
+    width: 500px;
+    height: 55px;
+    margin-top: 30px;
+}
+
+.center-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilo para PC */
+@media (min-width: 1024px) {
+
+}
+
+/* Estilo para tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .div_center{
+        font-weight: bold;
+        text-align: center; 
+    }
+    
+    .card-form-login{
+        width: 800px;
+        height: 702px;
+        background-color: #FFFFFF;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: 1px solid #C1C1C1;
+    }
+    
+    .card-gray{
+        width: 800px;
+        height: 152px;
+        background-color: #F3F3F3;
+        border: 1px solid #C1C1C1; 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .input-email{
+        width: 500px;
+        height: 60px;
+    
+    }
+    
+    .input-pass{
+        width: 500px;
+        height: 60px;
+        margin-top: 20px;
+    }
+    
+    .logo{
+        width: 100px;
+        height: 100px;
+    }
+    
+    .login-btn{
+        width: 500px;
+        height: 55px;
+        margin-top: 20px;
+    }
+    
+    .recover-pass{
+        width: 500px;
+        height: 55px;
+        margin-top: 30px;
+    }
+    
+    .center-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Estilo para teléfono */
+@media (max-width: 767px) {
+    .div_center{
+        font-weight: bold;
+        text-align: center; 
+    }
+    
+    .card-form-login{
+        width: 330px;
+        height: 500px;
+        background-color: #FFFFFF;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: 1px solid #C1C1C1;
+    }
+    
+    .card-gray{
+        width: 330px;
+        height: 80px;
+        background-color: #F3F3F3;
+        border: 1px solid #C1C1C1; 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    .input-email{
+        width: 300px;
+        height: 50px;
+        margin-top: 50px;
+    }
+    
+    .input-pass{
+        width: 300px;
+        height: 50px;
+        margin-top: 20px;
+    }
+    
+    .logo{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .login-btn{
+        width: 300px;
+        height: 50px;
+        margin-top: 20px;
+    }
+    
+    .recover-pass{
+        width: 300px;
+        height: 50px;
+        margin-top: 15px;
+    }
+    
+    .center-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@700&display=swap');
+
+header {
+    font-size: 200%; /* Equivalente a 32px */
+}
+
+body{
+    background-color: #F9F4F4;
+}
+
+header {
+    background-color: #FFFFFF;
+    color: #2D4494;
+    font-family: 'K2D', sans-serif;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; 
+}
+
+.container-input2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-nav{
+    width: 1380px;
+    height: 656px;
+    background-color: #FFFFFF;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 1px solid #C1C1C1;
+    justify-content: center;
+    align-items: center;    
+}
+
+.card-gray{
+    background-color: #F3F3F3;
+    width: 1380px;
+    height: 180px;
+    border: 1px solid #C1C1C1; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+}
+
+.input-email{
+    width: 500px;
+    height: 65px;
+    margin-top: 40px;
+}
+
+.input-email2{
+    width: 500px;
+    height: 65px;
+    margin-top: 10px;
+}
+
+.container-buttom{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 50px;
+}
+
+
+.cancel-btn{
+    width: 470px;
+    height: 55px;
+    background-color: #EEEEEE;    
+    border: 1px solid #C1C1C1; 
+    color: #000000;
+
+}
+
+.send-btn{
+    width: 470px;
+    height: 55px; 
+    margin-left: 20px;
+    background-color: #2D4494;
+    border: 1px solid #2D4494; 
+    color: #FFFFFF;
+}
+
+
+/* Estilo para PC */
+@media (min-width: 1024px) {
+    header {
+        font-size: 200%; /* Equivalente a 32px */
+    }   
+}
+
+/* Estilo para tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        font-size: 150%; /* Equivalente a 24px */
+    }
+    body{
+        background-color: #F9F4F4;
+    }
+    
+    header {
+        background-color: #FFFFFF;
+        color: #2D4494;
+        font-family: 'K2D', sans-serif;
+        font-weight: bold;
+        text-align: center; 
+    }
+    
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container-input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px; 
+    }
+
+    .container-input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card-nav{
+        width: 984px;
+        height: 656px;
+        background-color: #FFFFFF;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: 1px solid #C1C1C1;
+        justify-content: center;
+        align-items: center;    
+    }
+    
+    .card-gray{
+        background-color: #F3F3F3;
+        width: 984px;
+        height: 150px;
+        border: 1px solid #C1C1C1; 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+    
+    .logo{
+        width: 120px;
+        height: 120px;
+    }
+    
+    .input-email{
+        width: 500px;
+        height: 65px;
+        margin-top: 40px;
+    }
+
+    .input-email2{
+        width: 500px;
+        height: 65px;
+        margin-top: 40px;
+    }
+    
+    .container-buttom{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        margin-top: 50px;
+    }
+    
+    
+    .cancel-btn{
+        width: 440px;
+        height: 55px;
+        background-color: #EEEEEE;    
+        border: 1px solid #C1C1C1; 
+        color: #000000;
+    
+    }
+    
+    .send-btn{
+        width: 440px;
+        height: 55px; 
+        margin-left: 20px;
+        background-color: #2D4494;
+        border: 1px solid #2D4494; 
+    
+    }
+}
+
+/* Estilo para teléfono */
+@media (max-width: 767px) {    
+    header {
+        font-size: 120%; /* Equivalente a 19.2px */
+    }
+    body{
+        background-color: #F9F4F4;
+    }
+    
+    header {
+        background-color: #FFFFFF;
+        color: #2D4494;
+        font-family: 'K2D', sans-serif;
+        font-weight: bold;
+        text-align: center; 
+    }
+    
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container-input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -20px;
+    }
+
+    .container-input2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -10px;
+    }
+    
+    .card-nav{
+        width: 330px;
+        height: 350px;
+        background-color: #FFFFFF;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: 1px solid #C1C1C1;
+        justify-content: center;
+        align-items: center;    
+    }
+    
+    .card-gray{
+        background-color: #F3F3F3;
+        width: 330px;
+        height: 80px;
+        border: 1px solid #C1C1C1; 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+    
+    .logo{
+        width: 60px;
+        height: 60px;
+    }
+    
+    .input-email{
+        width: 300px;
+        height: 45px;
+    }
+
+    .input-email2{
+        width: 300px;
+        height: 45px;
+    }
+    
+    .container-buttom{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        margin-top: 50px;
+    }
+    
+    
+    .cancel-btn{
+        width: 150px;
+        height: 35px;
+        background-color: #EEEEEE;    
+        border: 1px solid #C1C1C1; 
+        color: #000000;
+    
+    }
+    
+    .send-btn{
+        width: 150px;
+        height: 35px; 
+        background-color: #2D4494;
+        border: 1px solid #2D4494; 
+        margin-left: 5px;
+    }
+   
+}
+
+

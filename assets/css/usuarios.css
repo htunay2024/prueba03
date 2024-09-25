@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@700&display=swap');
+
+body {
+    background-color: #F9F4F4;
+}
+
+header {
+    background-color: #FFFFFF;
+    color: #2D4494;
+    font-family: 'K2D', sans-serif;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.div_center {
+    font-weight: bold;
+    text-align: center; 
+}
+
+.div-color {
+    background-color: #FFFFFF;
+}
+
+.div-search {
+    top: 20px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-custom {
+    background-color: #f8f9fa;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+    width: 100%;
+}
+
+.table-custom thead {
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 0.25rem;
+}
+
+.table-custom th, .table-custom td {
+    vertical-align: middle;
+    padding: 0.75rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.table-custom th {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.table-custom tbody tr {
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.table-custom td {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu {
+    min-width: 10rem;
+}
+
+.dropdown-item {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+}
+
+.pagination .page-item .page-link {
+    color: #343a40;
+    border: 1px solid #343a40;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #495057;
+    border-color: #495057;
+    color: #fff;
+}
+
+.bx--dots-vertical-rounded {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232539d0' d='M12 10c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0-6c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0 12c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2'/%3E%3C/svg%3E");
+    cursor: pointer;
+}
+
+.div-color{
+    background-color: #FFFFFF;
+}
+
+.color-text-button{
+    color: #2D4494;
+}
+
+/* Estilo para pantallas grandes (desktops y laptops) */
+@media (min-width: 1024px) {
+    header {
+        font-size: 200%; /* Equivalente a 32px */
+    }
+}
+
+/* Estilo para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        font-size: 150%; /* Equivalente a 24px */
+    }
+}
+
+/* Estilo para teléfonos */
+@media (max-width: 767px) {
+    header {
+        font-size: 120%; /* Equivalente a 19.2px */
+    }
+
+    .table-custom th, .table-custom td {
+        padding: 0.5rem; /* Reducir padding para mejor ajuste en pantallas pequeñas */
+        font-size: 0.75rem; /* Reducir el tamaño de fuente en pantallas pequeñas */
+    }
+
+    .dropdown-menu {
+        min-width: 8rem; /* Reducir tamaño mínimo del menú desplegable */
+    }
+
+    .pagination {
+        font-size: 0.875rem; /* Reducir tamaño de fuente para paginación */
+    }
+
+    .div-search {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .table-responsive {
+        margin-bottom: 1rem; /* Añadir margen para mejorar separación */
+    }
+}
