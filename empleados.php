@@ -1,51 +1,3 @@
-<?php
-include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
-
-$conn = getConnection(); // Obtener la conexión a la base de datos
-
-// Verificar si la conexión es válida
-if (!$conn) {
-    die("Error al conectar a la base de datos.");
-}
-
-// Verificar si la sesión ya está activa antes de llamar a session_start()
-if (session_status() == PHP_SESSION_NONE) {
-    session_start(); // Inicia la sesión si no está ya activa
-}
-
-// Verificar si la sesión está activa
-if (!isset($_SESSION['usuario_logueado']) || $_SESSION['usuario_logueado'] !== true) {
-    SignIn2(); // Redirige al login si no está logueado
-}
-
-// Inicializar criterio de búsqueda
-$criterio = "";
-
-// Verificar si el usuario ha enviado una búsqueda
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['buscarEmpleado'])) {
-    $criterio = $_POST['buscarEmpleado'];
-}
-
-// Obtener el fk_id_empresa desde la sesión
-$fk_id_empresa = $_SESSION['fk_id_empresa']; // Asegúrate de que 'fk_id_empresa' esté en la sesión
-
-// Procedimiento almacenado para listar empleados con filtro y fk_id_empresa
-$sql = "{CALL sp_listar_empleados_con_filtro(?, ?)}";
-$params = array(
-    array($criterio, SQLSRV_PARAM_IN),
-    array($fk_id_empresa, SQLSRV_PARAM_IN) // Pasar fk_id_empresa como parámetro
-);
-
-// Ejecutar la consulta
-$stmt = sqlsrv_query($conn, $sql, $params);
-
-// Verificar si la consulta fue exitosa
-if ($stmt === false) {
-    die(print_r(sqlsrv_errors(), true));
-}
-?>
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -71,7 +23,7 @@ if ($stmt === false) {
 <body>
     <header class="bg-primary text-white py-3 shadow-sm">
         <div class="container d-flex justify-content-between align-items-center">
-            <a href="index.php" class="btn btn-outline-light d-flex align-items-center">
+            <a href="index.html" class="btn btn-outline-light d-flex align-items-center">
                 <i class="bi bi-arrow-left-circle me-2"></i> Regresar
             </a>
             <div class="text-center flex-grow-1">
@@ -82,11 +34,11 @@ if ($stmt === false) {
 
     <div class="container-fluid mt-5 mb-5">
         <div class="mx-auto p-4 bg-white rounded">
-            <form method="POST" action="">
+            <form method="POST" action="empleados.html">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="buscarEmpleado" placeholder="Buscar por nombre, apellido, puesto, etc." value="<?php echo isset($_POST['buscarEmpleado']) ? $_POST['buscarEmpleado'] : ''; ?>">
+                    <input type="text" class="form-control" name="buscarEmpleado" placeholder="Buscar por nombre, apellido, puesto, etc.">
                     <button type="submit" class="btn btn-primary">Buscar</button>
-                    <a href="templates/empleado/agregar_empleado.php" class="btn btn-outline-secondary">Agregar</a>
+                    <a href="templates/empleado/agregar_empleado.html" class="btn btn-outline-secondary">Agregar</a>
                 </div>
             </form>
             
@@ -106,29 +58,23 @@ if ($stmt === false) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (sqlsrv_has_rows($stmt)) : ?>
-                            <?php while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) : ?>
-                                <tr class="shadow-sm rounded bg-light mb-2">
-                                    <td class="text-center fw-bold"><?php echo $row['id_empleado']; ?></td>
-                                    <td class="fw-bold text-primary"><?php echo $row['nombres'] . ', ' . $row['apellidos']; ?></td>
-                                    <td><?php echo $row['puesto']; ?></td>
-                                    <td><?php echo $row['dpi_pasaporte']; ?></td>
-                                    <td><?php echo $row['numero_telefono']; ?></td>
-                                    <td><?php echo $row['correo_electronico']; ?></td>
-                                    <td><?php echo $row['profesion']; ?></td>
-                                    <td><?php echo $row['departamento']; ?></td>
-                                    <td class="text-center">
-                                        <button class="btn btn-info btn-sm rounded-pill px-3 me-2" onclick="window.location.href='templates/empleado/editar_empleado.php?id=<?php echo $row['id_empleado']; ?>'">
-                                            <i class="fas fa-pencil-alt"></i> Editar
-                                        </button>
-                                    </td>
-                                </tr>
-                            <?php endwhile; ?>
-                        <?php else : ?>
-                            <tr>
-                                <td colspan="11" class="text-center text-muted py-3">No se encontraron empleados</td>
-                            </tr>
-                        <?php endif; ?>
+                        <!-- Aquí podrías agregar filas de empleados de forma estática -->
+                        <tr class="shadow-sm rounded bg-light mb-2">
+                            <td class="text-center fw-bold">1</td>
+                            <td class="fw-bold text-primary">Juan Pérez</td>
+                            <td>Gerente</td>
+                            <td>123456789</td>
+                            <td>555-1234</td>
+                            <td>juan.perez@example.com</td>
+                            <td>Administrador de Empresas</td>
+                            <td>Recursos Humanos</td>
+                            <td class="text-center">
+                                <button class="btn btn-info btn-sm rounded-pill px-3 me-2" onclick="window.location.href='templates/empleado/editar_empleado.html'">
+                                    <i class="fas fa-pencil-alt"></i> Editar
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Agregar más empleados de forma estática -->
                     </tbody>
                 </table>
             </div>
@@ -137,8 +83,5 @@ if ($stmt === false) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>
 
-<?php
-sqlsrv_free_stmt($stmt);
-sqlsrv_close($conn);
-?>
