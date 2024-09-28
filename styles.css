@@ -1,9 +1,50 @@
+/* Eliminar float y hacer que el menú sea fijo y ocupe toda la altura */
+nav {
+    width: 200px; /* Ancho fijo del menú */
+    background-color: #f2f2f2;
+    padding: 15px;
+    position: fixed; /* Fijar el menú a la izquierda */
+    top: 0;
+    left: 0;
+    bottom: 0; /* Extender hasta la parte inferior de la página */
+    overflow-y: auto; /* Añadir scroll si el contenido es largo */
+}
+
+/* Ajustar el contenido principal para que no se superponga con el menú */
+main {
+    margin-left: 220px; /* Dejar espacio para el menú */
+    padding: 20px;
+}
+
+/* Hacer el menú más responsivo */
+@media (max-width: 600px) {
+    nav {
+        width: 100px; /* Reducir el tamaño del menú en pantallas más pequeñas */
+    }
+
+    main {
+        margin-left: 120px; /* Ajustar el margen del contenido principal */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        width: 80px; /* Menú más compacto en pantallas muy pequeñas */
+    }
+
+    main {
+        margin-left: 90px;
+    }
+}
+
+/* Mantener el estilo original para el cuerpo */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* Encabezado */
 header {
     background-color: #4CAF50;
     color: white;
@@ -11,13 +52,16 @@ header {
     padding: 1em 0;
 }
 
-nav {
-    float: left;
-    width: 20%;
-    background-color: #f2f2f2;
-    padding: 15px;
+/* Estilos del footer */
+footer {
+    clear: both;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
 
+/* Otros estilos ya presentes */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -40,32 +84,6 @@ nav ul li a:hover {
     color: white; /* Color del texto al pasar el mouse */
 }
 
-main {
-    float: left;
-    width: 75%;
-    padding: 20px;
-}
-
-footer {
-    clear: both;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-@media (max-width: 600px) {
-    nav {
-        width: 100%;
-        float: none;
-    }
-    main {
-        width: 100%;
-        float: none;
-    }
-}
-
-
 .social-media {
     margin: 10px 0;
 }
@@ -84,4 +102,3 @@ footer {
     background-color: white; /* Fondo blanco al pasar el mouse */
     color: #4CAF50; /* Texto verde al pasar el mouse */
 }
-
