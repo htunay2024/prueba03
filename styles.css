@@ -1,20 +1,20 @@
-/* Ajustar el menú para que no cubra el encabezado */
-nav {
-    width: 200px; /* Ancho fijo del menú */
-    background-color: #f2f2f2;
-    padding: 15px;
-    position: fixed; /* Fijar el menú a la izquierda */
-    top: 60px; /* Ajusta este valor según la altura del encabezado */
+/* Contenedor del menú para que no cubra encabezado ni pie de página */
+.menu-container {
+    position: fixed; /* Fijar el contenedor del menú */
+    top: 60px; /* Espacio para el encabezado */
+    bottom: 40px; /* Espacio para el pie de página */
     left: 0;
-    bottom: 40px; /* Dejar espacio para el pie de página */
-    overflow-y: auto; /* Añadir scroll si el contenido es largo */
+    width: 200px; /* Ancho del menú */
+    background-color: #f2f2f2;
+    overflow-y: auto; /* Scroll si el contenido es largo */
+    padding: 15px;
 }
 
 /* Ajustar el contenido principal para que no se superponga con el menú */
 main {
     margin-left: 220px; /* Dejar espacio para el menú */
-    margin-top: 60px; /* Ajusta este valor según la altura del encabezado */
-    margin-bottom: 40px; /* Dejar espacio para el pie de página */
+    margin-top: 60px; /* Espacio para el encabezado */
+    margin-bottom: 40px; /* Espacio para el pie de página */
     padding: 20px;
 }
 
@@ -44,58 +44,42 @@ footer {
 
 /* Hacer el menú más responsivo */
 @media (max-width: 768px) {
-    nav {
+    .menu-container {
         width: 150px; /* Reducir el tamaño del menú en pantallas medianas */
-        top: 50px; /* Ajustar posición superior */
-        bottom: 30px; /* Ajustar posición inferior */
     }
 
     main {
         margin-left: 170px; /* Ajustar margen del contenido principal */
-        margin-top: 50px; /* Ajustar margen superior */
-        margin-bottom: 30px; /* Ajustar margen inferior */
     }
 }
 
 @media (max-width: 600px) {
-    nav {
+    .menu-container {
         width: 120px; /* Reducir el tamaño del menú en pantallas más pequeñas */
-        top: 45px; /* Ajustar posición superior */
-        bottom: 30px; /* Ajustar posición inferior */
     }
 
     main {
         margin-left: 140px; /* Ajustar margen del contenido principal */
-        margin-top: 45px; /* Ajustar margen superior */
-        margin-bottom: 30px; /* Ajustar margen inferior */
     }
 }
 
 @media (max-width: 480px) {
-    nav {
+    .menu-container {
         width: 100px; /* Menú más compacto en pantallas muy pequeñas */
-        top: 40px; /* Ajustar posición superior */
-        bottom: 30px; /* Ajustar posición inferior */
     }
 
     main {
-        margin-left: 120px;
-        margin-top: 40px; /* Ajustar margen superior */
-        margin-bottom: 30px; /* Ajustar margen inferior */
+        margin-left: 120px; /* Ajustar margen del contenido principal */
     }
 }
 
 @media (max-width: 320px) {
-    nav {
+    .menu-container {
         width: 80px; /* Menú muy compacto en pantallas muy pequeñas */
-        top: 40px; /* Ajustar posición superior */
-        bottom: 30px; /* Ajustar posición inferior */
     }
 
     main {
-        margin-left: 100px;
-        margin-top: 40px; /* Ajustar margen superior */
-        margin-bottom: 30px; /* Ajustar margen inferior */
+        margin-left: 100px; /* Ajustar margen del contenido principal */
     }
 }
 
@@ -143,7 +127,7 @@ nav ul li a:hover {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.social-media a:hover {
+social-media a:hover {
     background-color: white; /* Fondo blanco al pasar el mouse */
     color: #4CAF50; /* Texto verde al pasar el mouse */
 }
